@@ -13,4 +13,6 @@ steps:
       terraform validate
       echo "run plan"
       terraform plan -out terraform.plan
+options:
+  logging: NONE
       
