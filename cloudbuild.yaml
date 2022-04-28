@@ -14,5 +14,5 @@ steps:
       echo "run plan"
       terraform plan -out terraform.plan
 options:
-  logging: NONE
+  logging: CLOUD_LOGGING_ONLY
       
