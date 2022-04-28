@@ -13,7 +13,6 @@ steps:
       terraform validate
       echo "run plan"
       terraform plan -no-color -out terraform.plan
-      terraform apply -no-color -auto-approve terraform.plan
 options:
   logging: CLOUD_LOGGING_ONLY
       
