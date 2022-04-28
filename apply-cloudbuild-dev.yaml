@@ -1,0 +1,17 @@
+steps:
+- id: 'tf plan'
+  name: hashicorp/terraform:latest
+  entrypoint: 'sh'
+  args:
+  - '-c'
+  - |
+      echo "branch $BRANCH_NAME"
+      cd terraform
+      echo "run init"
+      terraform init -no-color -compact-warnings -backend-config=bucket=5678758-terraform-dev-tfstate
+      echo "run plan"
+      terraform plan -no-color -compact-warnings -var-file=env/dev.tfvars -no-color -out terraform.plan
+      terraform apply -no-color -compact-warnings -auto-approve terraform.plan
+options:
+  logging: CLOUD_LOGGING_ONLY
+      
