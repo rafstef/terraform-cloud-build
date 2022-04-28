@@ -9,3 +9,10 @@ resource "google_sql_database_instance" "master" {
     }
 }
 
+
+terraform {
+ backend "gcs" {
+   bucket  = "5678758-terraform-tfstate"
+   prefix  = "terraform/state"
+ }
+}
