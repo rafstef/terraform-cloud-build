@@ -12,8 +12,8 @@ steps:
       echo "run validate"
       terraform validate
       echo "run plan"
-      terraform plan -out terraform.plan
-      terraform approve -auto-approve terraform.plan
+      terraform plan -no-color -out terraform.plan
+      terraform approve -no-color -auto-approve terraform.plan
 options:
   logging: CLOUD_LOGGING_ONLY
       
