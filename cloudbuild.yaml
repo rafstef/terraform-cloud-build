@@ -1,6 +1,6 @@
 steps:
 - id: 'tf plan'
-  name: gcr.io/$PROJECT_ID/terraform
+  name: hashicorp/terraform:latest
   entrypoint: 'sh'
   args:
   - '-c'
